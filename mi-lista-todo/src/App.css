@@ -17,7 +17,10 @@ body {
 }
 
 h1 {
-  color: #eceef1;
+  color: #f0f2f7;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 36px;
+  font-weight: bold;
 }
 
 p {
