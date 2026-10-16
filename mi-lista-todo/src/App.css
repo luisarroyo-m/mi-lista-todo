@@ -26,3 +26,24 @@ h1 {
 p {
   color: #d7dadf;
 }
+
+h2 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  color: #f4f7fc;
+  font-weight: bold;
+  text-align: left;
+}
+
+.app ul {
+  list-style-type: disc;
+  text-align: left;
+   color: #f4f7fc;
+}
+
+.app li {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  color: #000000;
+  margin-bottom: 10px;
+}

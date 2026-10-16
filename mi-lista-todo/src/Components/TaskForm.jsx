@@ -1,27 +1,26 @@
+
 import { useState } from "react";
 
 function TaskForm({ onAddTask }) {
-  const [texto, setTexto ] = useState ("");
+  const [texto, setTexto] = useState("");
 
   function agregarTarea() {
-    if (texto.trim()===""){
+    if (texto.trim() === "") {
       return;
     }
-    
+
     onAddTask(texto);
     setTexto("");
-
   }
 
   return (
     <div>
       <input
-      type="text"
-      placeholder="Escribe una tarea"
-      value={texto}
-      onChange={(e) => setTexto(e.target.value)}
-
- />
+        type="text"
+        placeholder="Escribe una tarea"
+        value={texto}
+        onChange={(e) => setTexto(e.target.value)}
+      />
 
       <button onClick={agregarTarea}>
         Agregar tarea
@@ -30,7 +29,10 @@ function TaskForm({ onAddTask }) {
   );
 }
 
-export default TaskForm;      
+export default TaskForm;
+
+
+   
 
 
 

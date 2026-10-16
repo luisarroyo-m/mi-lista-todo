@@ -6,15 +6,25 @@ import TaskForm from "./components/TaskForm";
 function App() {
   const [tasks, setTasks] = useState([]);
 
+  function agregarTarea(nuevaTarea) {
+  setTasks([...tasks, nuevaTarea]);
+}
   return (
     <div className="app">
-      <h1>Mi lista de tareas</h1>
-      <p>Organiza tus actividades del día</p>
+      <h1>Lista de tareas</h1>
+      <p>Organiza mi día</p>
 
-      <TaskForm />
+      <TaskForm onAddTask={agregarTarea} />
+
+      <h2>Mis tareas</h2>
+
+      <ul>
+        {tasks.map((tarea, indice) => (
+          <li key={indice}>{tarea}</li>
+        ))}
+      </ul>
     </div>
   );
 }
 
 export default App;
-
