@@ -2,13 +2,21 @@
 import { useState } from "react";
 import "./App.css";
 import TaskForm from "./Components/TaskForm";
+import EliminarTarea from "./Components/EliminarTarea";
 
 function App() {
   const [tasks, setTasks] = useState([]);
 
+  // Función para agregar tareas
   function agregarTarea(nuevaTarea) {
-  setTasks([...tasks, nuevaTarea]);
-}
+    setTasks([...tasks, nuevaTarea]);
+  }
+
+  // Función para eliminar tareas
+  function eliminarTarea(indice) {
+    setTasks(tasks.filter((tarea, i) => i !== indice));
+  }
+
   return (
     <div className="app">
       <h1>Lista de tareas</h1>
@@ -20,7 +28,13 @@ function App() {
 
       <ul>
         {tasks.map((tarea, indice) => (
-          <li key={indice}>{tarea}</li>
+          <li key={indice}>
+            {tarea}
+
+            <EliminarTarea
+              onEliminar={() => eliminarTarea(indice)}
+            />
+          </li>
         ))}
       </ul>
     </div>
@@ -28,3 +42,4 @@ function App() {
 }
 
 export default App;
+
